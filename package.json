@@ -1,0 +1,38 @@
+{
+  "name": "ai-security-scanner",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-assisted security scan review POC",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "db:up": "docker compose up -d db",
+    "db:migrate": "tsx src/db/migrate.ts",
+    "dev:api": "tsx watch src/api/main.ts",
+    "dev:worker": "tsx watch src/worker/main.ts",
+    "start:api": "node dist/api/main.js",
+    "start:worker": "node dist/worker/main.js",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@fastify/static": "^10.1.9",
+    "@google/genai": "^2.32.0",
+    "adm-zip": "^0.6.1",
+    "dotenv": "^18.0.9",
+    "fastify": "^5.12.8",
+    "pg": "^8.23.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.8",
+    "@types/node": "^26.6.6",
+    "@types/pg": "^8.23.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.12"
+  }
+}

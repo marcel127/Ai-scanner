@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Security scan review</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">Public repository review</p>
+        <h1>Security scan</h1>
+        <p class="lede">
+          Submit a public GitHub repository. The scan runs deterministic rules and, when configured, an optional AI review.
+        </p>
+      </header>
+
+      <form id="scan-form">
+        <label for="github-url">GitHub URL</label>
+        <div class="row">
+          <input
+            id="github-url"
+            name="githubUrl"
+            type="url"
+            required
+            placeholder="https://github.com/owner/repo"
+            autocomplete="off"
+          />
+          <button id="start" type="submit">Start scan</button>
+        </div>
+        <p id="form-error" class="error" hidden></p>
+      </form>
+
+      <section id="progress" hidden>
+        <h2>Progress</h2>
+        <ol id="steps"></ol>
+        <p id="scan-error" class="error" hidden></p>
+      </section>
+
+      <section id="result" hidden>
+        <h2>Review</h2>
+        <p id="ai-status" class="notice" hidden></p>
+        <p id="coverage" class="notice" hidden></p>
+        <p id="risk" class="risk"></p>
+        <p id="summary"></p>
+        <ul id="counts" class="counts"></ul>
+        <h3>Findings</h3>
+        <div id="findings"></div>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
