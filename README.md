@@ -135,17 +135,6 @@ Automatic retries and backoff are intentionally omitted. If the worker process c
 
 A production system would use durable queue recovery, bounded retries with backoff, and improved monitoring.
 
-## Coding agents
-
-AI-assisted development tools were used during implementation:
-
-- **Cursor:** Assisted with code generation, implementation, tests, and targeted modifications.
-- **ChatGPT:** Assisted with architecture discussions, code reviews, debugging, and evaluating implementation trade-offs.
-
-The generated code and architecture were reviewed during development, with the implementation kept intentionally focused on the scope of the POC.
-
-The application also integrates Gemini as an optional runtime component for security analysis. This is separate from the use of coding assistants during development.
-
 ## Tests
 
 Run the test suite:
